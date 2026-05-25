@@ -1,0 +1,70 @@
+#Implement a stack using singly linked list
+import sys
+class GetNode:
+    def __init__(self):
+        self.data=None
+        self.next=None
+
+
+class Linkedlist:
+    def __init__(self):
+        self.head=None
+        self.top=None
+
+    def push(self):
+        data=int(input("Enter data: "))
+        newNode=GetNode()
+        newNode.data=data
+        if self.head==None:
+            self.head=newNode
+        else:
+            ptr=self.head
+            while ptr.next!=None:
+                ptr=ptr.next
+            ptr.next=newNode
+            self.top=newNode
+            print(data," is added")
+
+
+    def traverse(self):
+        if self.head==None:
+            print("Linked list not present")
+        else:
+            ptr=self.head
+            while ptr!=None:
+                print(ptr.data, " -> ", end="")
+                ptr=ptr.next
+            print("None")
+    
+     
+
+
+    def pop(self):
+        if self.head==None:
+            print("list not present")
+        else:
+            ptr=self.head
+            while ptr.next!=None:
+                ptr1=ptr
+                ptr=ptr.next
+            ptr1.next=None
+            print(ptr.data, "is delete from end.")
+
+if __name__ == '__main__':
+        obj = Linkedlist()
+
+        while True:
+            print("1. Push")
+            print("2. Traverse")
+            print("3. pop")
+            print("0. Exit")
+            n=int(input("Select any choice: "))
+            if n==1:
+                obj.push()
+            elif n==2:
+                obj.traverse()
+            elif n==3:
+                obj.pop()
+            
+            sys.exit(0)
+        
