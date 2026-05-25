@@ -1,0 +1,9 @@
+no=int(input("Enter the no: "))
+n1=no%10 #3
+no=no//10 #12
+n2=no%10 #2
+no=no//10 #1
+n3=no%10 #1
+
+res=n1+n2+n3
+print(res)
